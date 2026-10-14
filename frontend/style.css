@@ -1,0 +1,798 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 17px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input,
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #555;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.result-card {
+    background: white;
+    margin-top: 25px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 12px;
+    background: #f4f7fb;
+}
+
+.result-box p {
+    margin-top: 10px;
+    color: #666;
+}
+
+.result-box h3 {
+    font-size: 28px;
+    margin: 10px 0 25px;
+}
+
+.result-box h1 {
+    font-size: 45px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 700px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+/* ======================================================
+   SkillSync AI — Dark Navy & Blue-Purple Theme
+   Existing JavaScript and API functionality unchanged
+   ====================================================== */
+
+:root {
+    color-scheme: dark;
+    --bg-main: #080d1c;
+    --bg-card: #111a30;
+    --bg-input: #0b1327;
+    --border-color: #293758;
+    --text-main: #edf2ff;
+    --text-muted: #a5b2cf;
+    --accent-blue: #6485ff;
+    --accent-purple: #9b6bff;
+}
+
+html {
+    min-height: 100%;
+    background: var(--bg-main);
+}
+
+body {
+    min-height: 100vh;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(ellipse at 10% 0%, rgba(65, 95, 210, 0.20), transparent 38%),
+        radial-gradient(ellipse at 95% 15%, rgba(139, 73, 230, 0.15), transparent 32%),
+        var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: min(94%, 1200px);
+    margin: 38px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+header h1 {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    background: linear-gradient(100deg, #8cb4ff, #a78bfa, #d1a8ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+.card,
+.result-card,
+.dashboard-card {
+    color: var(--text-main);
+    background: linear-gradient(145deg, #141e36, #0f172b);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.24);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover,
+.result-card:not(.hidden):hover,
+.dashboard-card:hover {
+    border-color: #5368a4;
+}
+
+.card h2,
+.card h3,
+.result-card h2,
+.result-card h3,
+.dashboard-card h1,
+.dashboard-card h2,
+.dashboard-card h3 {
+    color: #f1f4ff;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    gap: 22px;
+}
+
+.form-group {
+    min-width: 0;
+}
+
+label {
+    color: #d8e1fa;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 13px 14px;
+    color: #edf2ff;
+    background: var(--bg-input);
+    border: 1px solid #344363;
+    border-radius: 10px;
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #7483a3;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(100, 133, 255, 0.17);
+}
+
+select option {
+    color: #edf2ff;
+    background: #111a30;
+}
+
+button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 14px 18px;
+    color: #fff;
+    background: linear-gradient(105deg, #526ff1, #8155df);
+    border: 1px solid rgba(177, 185, 255, 0.24);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 7px 20px rgba(88, 87, 226, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+    opacity: 1;
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(88, 87, 226, 0.32);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 2px solid #a8baff;
+    outline-offset: 3px;
+}
+
+.result-card {
+    margin-top: 26px;
+    text-align: left;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 22px;
+    color: var(--text-main);
+    background: linear-gradient(135deg, #172541, #1b1b3c);
+    border: 1px solid #344568;
+    border-radius: 13px;
+}
+
+.result-box p {
+    margin-top: 10px;
+    color: var(--text-muted);
+}
+
+.result-box h3 {
+    font-size: 25px;
+    margin: 10px 0 18px;
+}
+
+.result-box h1 {
+    font-size: clamp(32px, 5vw, 46px);
+    background: linear-gradient(100deg, #8cb4ff, #b69aff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dashboard-section {
+    margin-top: 28px;
+}
+
+.dashboard-section > h2,
+.dashboard-section > h3 {
+    color: #dce5ff;
+    margin-bottom: 16px;
+}
+
+.dashboard-card {
+    height: 100%;
+    overflow-wrap: anywhere;
+}
+
+.dashboard-card h1,
+.dashboard-card h2,
+.dashboard-card h3,
+.dashboard-card p {
+    margin-bottom: 10px;
+}
+
+#dashboardPrediction,
+#dashboardReadiness,
+#dashboardSkillCount,
+#dashboardSkillMatch,
+#dashboardMissingSkills,
+#dashboardCareer,
+#dashboardLearning {
+    overflow-wrap: anywhere;
+}
+
+#matchedSkills,
+#missingSkills {
+    color: var(--text-muted);
+    line-height: 1.9;
+}
+
+.hidden {
+    display: none !important;
+}
+
+a {
+    color: #9bb8ff;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #c4b5fd;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 22px 0;
+}
+
+::selection {
+    color: white;
+    background: #5b55bf;
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 94%;
+        margin: 22px auto;
+    }
+
+    .card,
+    .result-card,
+    .dashboard-card {
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .result-box {
+        padding: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* ===== GRAPHICAL DASHBOARD UPGRADE ===== */
+
+.dashboard-card {
+    padding: 30px;
+    background:
+        radial-gradient(ellipse at top right, rgba(124, 82, 255, .12), transparent 45%),
+        #10182b;
+}
+
+.dashboard-card > h1 {
+    font-size: clamp(28px, 3vw, 38px);
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #8ab4ff, #bc8cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dashboard-card > .subtitle {
+    margin-bottom: 28px;
+}
+
+/* Responsive dashboard card grid */
+.dashboard-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.dashboard-card > h1,
+.dashboard-card > .subtitle,
+.dashboard-card > #refreshDashboard {
+    grid-column: 1 / -1;
+}
+
+.dashboard-card > .dashboard-section {
+    min-width: 0;
+    margin: 0;
+    padding: 22px;
+    border: 1px solid #2c3a5b;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #17223b, #111a2e);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+    transition: border-color .2s ease, transform .2s ease;
+}
+
+.dashboard-card > .dashboard-section:hover {
+    border-color: #7771e8;
+    transform: translateY(-2px);
+}
+
+.dashboard-section h2 {
+    font-size: 17px;
+    margin-bottom: 16px;
+    color: #c9d6ff;
+}
+
+.dashboard-section p {
+    color: #9cacca;
+    font-size: 14px;
+}
+
+#dashboardPrediction {
+    display: inline-block;
+    margin: 8px 0 22px;
+    padding: 8px 14px;
+    border: 1px solid #356e65;
+    border-radius: 10px;
+    color: #66e5c1;
+    background: rgba(39, 190, 151, .12);
+    font-size: 23px;
+    overflow-wrap: anywhere;
+}
+
+#dashboardReadiness,
+#dashboardSkillMatch {
+    width: fit-content;
+    margin: 8px 0 14px;
+    font-size: clamp(34px, 4vw, 46px);
+    line-height: 1.15;
+    background: linear-gradient(100deg, #73b7ff, #a68aff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#dashboardSkillCount {
+    width: fit-content;
+    margin: 10px 0;
+    font-size: 44px;
+    color: #5ee6c0;
+}
+
+#dashboardCareer {
+    margin-top: 14px;
+    font-size: 25px;
+    color: #c2a2ff;
+    overflow-wrap: anywhere;
+}
+
+#dashboardMissingSkills,
+#dashboardLearning {
+    margin-top: 12px;
+    color: #b7c5e4;
+    overflow-wrap: anywhere;
+}
+
+#dashboardMissingSkills p,
+#dashboardLearning p {
+    margin: 8px 0;
+    padding: 10px 12px;
+    border-radius: 9px;
+    border: 1px solid #34415f;
+    background: #10192d;
+}
+
+#dashboardMissingSkills span,
+#dashboardLearning span {
+    overflow-wrap: anywhere;
+}
+
+#refreshDashboard {
+    margin-top: 8px;
+    grid-column: 1 / -1;
+}
+
+/* Keep forms and result panels full-width and unchanged */
+@media (max-width: 700px) {
+    .dashboard-card {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 18px;
+        gap: 14px;
+    }
+
+    .dashboard-card > h1,
+    .dashboard-card > .subtitle,
+    .dashboard-card > #refreshDashboard {
+        grid-column: 1;
+    }
+
+    .dashboard-card > .dashboard-section {
+        padding: 18px;
+    }
+}
+
+/* ===== END GRAPHICAL DASHBOARD UPGRADE ===== */
+
+
+/* ===== SKILL & RECOMMENDATION READABILITY ===== */
+
+#dashboardMissingSkills,
+#dashboardLearning,
+#missingSkills,
+#matchedSkills,
+#learningRecommendations,
+#careerRecommendationResult {
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+#dashboardMissingSkills > *,
+#dashboardLearning > *,
+#missingSkills > *,
+#matchedSkills > *,
+#learningRecommendations > *,
+#careerRecommendationResult > * {
+    margin: 10px 0;
+}
+
+#dashboardMissingSkills p,
+#dashboardLearning p,
+#missingSkills p,
+#matchedSkills p,
+#learningRecommendations p {
+    display: block;
+    padding: 12px 16px;
+    margin: 10px 0;
+    line-height: 1.8;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    border: 1px solid #344363;
+    border-radius: 10px;
+    background: #111d34;
+    color: #dce6ff;
+}
+
+#dashboardMissingSkills li,
+#dashboardLearning li,
+#missingSkills li,
+#matchedSkills li,
+#learningRecommendations li {
+    margin: 8px 0 8px 22px;
+    padding-left: 4px;
+    line-height: 1.8;
+}
+
+#dashboardMissingSkills h3,
+#dashboardLearning h3,
+#learningRecommendations h3 {
+    margin: 18px 0 10px;
+    line-height: 1.5;
+    color: #c6b5ff;
+}
+
+#dashboardMissingSkills br,
+#dashboardLearning br,
+#missingSkills br,
+#matchedSkills br {
+    content: "";
+    display: block;
+    margin-bottom: 8px;
+}
+
+
+/* ===== SKILL ANALYSIS VISUAL IMPROVEMENTS ===== */
+
+/* Give skill sections clear separation */
+#matchedSkills,
+#missingSkills,
+#learningRecommendations,
+#dashboardMissingSkills,
+#dashboardLearning {
+    margin-top: 16px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+/* Separate individual skill and recommendation items */
+#matchedSkills > *,
+#missingSkills > *,
+#learningRecommendations > *,
+#dashboardMissingSkills > *,
+#dashboardLearning > * {
+    margin: 12px 0;
+}
+
+/* Readable individual skill items */
+#matchedSkills p,
+#missingSkills p,
+#learningRecommendations p,
+#dashboardMissingSkills p,
+#dashboardLearning p {
+    padding: 12px 16px;
+    margin: 12px 0;
+    line-height: 1.8;
+    border: 1px solid #344363;
+    border-radius: 10px;
+    background: #111d34;
+    color: #dce6ff;
+    overflow-wrap: anywhere;
+}
+
+/* Add space between detected skills if rendered as inline text */
+#matchedSkills span,
+#missingSkills span {
+    display: inline-block;
+    margin: 4px 7px 4px 0;
+    padding: 5px 10px;
+    border-radius: 7px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* Skills you have: green accent */
+#matchedSkills span {
+    color: #70e6bd;
+    background: rgba(39, 190, 151, 0.10);
+    border: 1px solid rgba(39, 190, 151, 0.35);
+}
+
+/* Skills to learn: red accent for easy identification */
+#missingSkills span {
+    color: #ff8d9b;
+    background: rgba(255, 75, 100, 0.10);
+    border: 1px solid rgba(255, 75, 100, 0.35);
+}
+
+/* Highlight missing-skills headings */
+#missingSkills h3,
+#dashboardMissingSkills h3,
+#careerRecommendationResult h3 {
+    margin: 20px 0 12px;
+    color: #ff687d;
+    line-height: 1.6;
+}
+
+/* Clear spacing for skill section headings */
+#matchedSkills h3,
+#learningRecommendations h3,
+#dashboardLearning h3 {
+    margin: 20px 0 12px;
+    color: #a9baff;
+    line-height: 1.6;
+}
+
+/* Lists inside skill and career sections */
+#matchedSkills li,
+#missingSkills li,
+#learningRecommendations li,
+#dashboardMissingSkills li,
+#dashboardLearning li,
+#careerRecommendationResult li {
+    margin: 9px 0 9px 22px;
+    padding-left: 5px;
+    line-height: 1.9;
+}
+
+/* Career recommendation: emphasize the literal label */
+#careerRecommendationResult strong,
+#careerRecommendationResult b,
+#careerRecommendationResult .missing-skills-label,
+#careerRecommendationResult .missing-skills-title {
+    color: #ff687d;
+    font-weight: 700;
+}
+
+/* ===== END SKILL ANALYSIS VISUAL IMPROVEMENTS ===== */
+
+
+/* Remove red highlighting from Career Recommendations */
+#careerRecommendationResult h3,
+#careerRecommendationResult strong,
+#careerRecommendationResult b,
+#careerRecommendationResult .missing-skills-label,
+#careerRecommendationResult .missing-skills-title {
+    color: #dce6ff;
+}
+
+
+/* Resume Detected Skills - Spaced Skill Chips */
+#skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    width: 100%;
+}
+
+#skillsList .skill-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 9px 15px;
+    border: 1px solid #465b96;
+    border-radius: 10px;
+    background: #1b2945;
+    color: #e1eaff;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}

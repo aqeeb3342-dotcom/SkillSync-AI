@@ -1,0 +1,37 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# macOS files
+.DS_Store
+
+# Logs
+*.log
+
+# Editor settings
+.vscode/
+.idea/
+
+# Local backups
+*.zip
+*.bak
+
+# Temporary frontend backups
+*.bak
+*.backup
+*.before-*
+
+# Personal resume documents
+resume_analyzer/resumes/
+frontend/script.js.before_*

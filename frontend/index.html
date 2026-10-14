@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SkillSync AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
+
+    <header>
+
+        <h1>SkillSync AI</h1>
+
+        <p>
+            AI-Based Career Guidance & Placement Prediction
+        </p>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         1. STUDENT PROFILE
+    =================================================== -->
+
+    <div class="card">
+
+        <h2>Student Profile</h2>
+
+        <p class="subtitle">
+            Enter your academic and career information
+        </p>
+
+
+        <form id="predictionForm">
+
+            <div class="form-grid">
+
+
+                <!-- Gender -->
+
+                <div class="form-group">
+
+                    <label>Gender</label>
+
+                    <select id="gender" required>
+
+                        <option value="">
+                            Select Gender
+                        </option>
+
+                        <option value="M">
+                            Male
+                        </option>
+
+                        <option value="F">
+                            Female
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SSC -->
+
+                <div class="form-group">
+
+                    <label>SSC Percentage</label>
+
+                    <input
+                        type="number"
+                        id="ssc_p"
+                        step="0.01"
+                        min="0"
+                        max="100"
+                        placeholder="Example: 75"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SSC Board -->
+
+                <div class="form-group">
+
+                    <label>SSC Board</label>
+
+                    <select id="ssc_b" required>
+
+                        <option value="">
+                            Select Board
+                        </option>
+
+                        <option value="Central">
+                            Central
+                        </option>
+
+                        <option value="Others">
+                            Others
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- HSC -->
+
+                <div class="form-group">
+
+                    <label>HSC Percentage</label>
+
+                    <input
+                        type="number"
+                        id="hsc_p"
+                        step="0.01"
+                        min="0"
+                        max="100"
+                        placeholder="Example: 72"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- HSC Board -->
+
+                <div class="form-group">
+
+                    <label>HSC Board</label>
+
+                    <select id="hsc_b" required>
+
+                        <option value="">
+                            Select Board
+                        </option>
+
+                        <option value="Central">
+                            Central
+                        </option>
+
+                        <option value="Others">
+                            Others
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- HSC Stream -->
+
+                <div class="form-group">
+
+                    <label>HSC Stream</label>
+
+                    <select id="hsc_s" required>
+
+                        <option value="">
+                            Select Stream
+                        </option>
+
+                        <option value="Science">
+                            Science
+                        </option>
+
+                        <option value="Commerce">
+                            Commerce
+                        </option>
+
+                        <option value="Arts">
+                            Arts
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Degree -->
+
+                <div class="form-group">
+
+                    <label>Degree Percentage</label>
+
+                    <input
+                        type="number"
+                        id="degree_p"
+                        step="0.01"
+                        min="0"
+                        max="100"
+                        placeholder="Example: 70"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Degree Type -->
+
+                <div class="form-group">
+
+                    <label>Degree Type</label>
+
+                    <select id="degree_t" required>
+
+                        <option value="">
+                            Select Degree Type
+                        </option>
+
+                        <option value="Sci&Tech">
+                            Sci&Tech
+                        </option>
+
+                        <option value="Comm&Mgmt">
+                            Comm&Mgmt
+                        </option>
+
+                        <option value="Others">
+                            Others
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Work Experience -->
+
+                <div class="form-group">
+
+                    <label>Work Experience</label>
+
+                    <select id="workex" required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Yes">
+                            Yes
+                        </option>
+
+                        <option value="No">
+                            No
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Employability Test -->
+
+                <div class="form-group">
+
+                    <label>
+                        Employability Test %
+                    </label>
+
+                    <input
+                        type="number"
+                        id="etest_p"
+                        step="0.01"
+                        min="0"
+                        max="100"
+                        placeholder="Example: 75"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Specialisation -->
+
+                <div class="form-group">
+
+                    <label>Specialisation</label>
+
+                    <select
+                        id="specialisation"
+                        required
+                    >
+
+                        <option value="">
+                            Select Specialisation
+                        </option>
+
+                        <option value="Mkt&HR">
+                            Marketing & HR
+                        </option>
+
+                        <option value="Mkt&Fin">
+                            Marketing & Finance
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- MBA -->
+
+                <div class="form-group">
+
+                    <label>MBA Percentage</label>
+
+                    <input
+                        type="number"
+                        id="mba_p"
+                        step="0.01"
+                        min="0"
+                        max="100"
+                        placeholder="Example: 70"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button type="submit">
+                Predict Placement
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         2. PLACEMENT RESULT
+    =================================================== -->
+
+    <div
+        id="resultCard"
+        class="result-card hidden"
+    >
+
+        <h2>
+            Placement Prediction
+        </h2>
+
+
+        <div class="result-box">
+
+            <p>
+                Prediction
+            </p>
+
+            <h3 id="predictionResult">
+                ---
+            </h3>
+
+
+            <p>
+                Placement Readiness
+            </p>
+
+            <h1 id="readinessResult">
+                --%
+            </h1>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         3. RESUME ANALYZER
+    =================================================== -->
+
+    <div class="card resume-card">
+
+        <h2>
+            Resume Analyzer
+        </h2>
+
+        <p class="subtitle">
+            Upload your PDF resume to detect technical skills.
+        </p>
+
+
+        <div class="resume-upload">
+
+            <input
+                type="file"
+                id="resumeFile"
+                accept=".pdf"
+            >
+
+
+            <button
+                type="button"
+                id="analyzeResumeBtn"
+            >
+                Analyze Resume
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         4. DETECTED SKILLS
+    =================================================== -->
+
+    <div
+        id="resumeResult"
+        class="result-card hidden"
+    >
+
+        <h2>
+            Detected Skills
+        </h2>
+
+
+        <p id="resumeFilename">
+        </p>
+
+
+        <div id="skillsList">
+        </div>
+
+
+        <h3>
+
+            Total Skills:
+
+            <span id="skillCount">
+                0
+            </span>
+
+        </h3>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         5. SKILL GAP ANALYSIS
+    =================================================== -->
+
+    <div class="card">
+
+        <h2>
+            Skill Gap Analysis
+        </h2>
+
+        <p class="subtitle">
+            Compare your skills with the requirements of a career.
+        </p>
+
+
+        <div class="form-group">
+
+            <label>
+                Select Career
+            </label>
+
+
+            <select id="careerSelect">
+
+                <option value="Data Analyst">
+                    Data Analyst
+                </option>
+
+                <option value="Machine Learning Engineer">
+                    Machine Learning Engineer
+                </option>
+
+                <option value="Python Developer">
+                    Python Developer
+                </option>
+
+                <option value="Web Developer">
+                    Web Developer
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="skillGapBtn"
+        >
+            Analyze Skill Gap
+        </button>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         6. SKILL GAP RESULT
+    =================================================== -->
+
+    <div
+        id="skillGapResult"
+        class="result-card hidden"
+    >
+
+        <h2>
+            Skill Gap Analysis
+        </h2>
+
+
+        <p>
+            Career:
+        </p>
+
+
+        <h3 id="skillGapCareer">
+            ---
+        </h3>
+
+
+        <div class="result-box">
+
+            <p>
+                Skill Match
+            </p>
+
+
+            <h1 id="skillMatch">
+                --%
+            </h1>
+
+
+            <h3>
+                Skills You Have
+            </h3>
+
+
+            <div id="matchedSkills">
+            </div>
+
+
+            <h3>
+                Skills You Need to Learn
+            </h3>
+
+
+            <div id="missingSkills">
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         7. CAREER RECOMMENDATIONS
+    =================================================== -->
+
+    <div
+        id="careerRecommendationResult"
+        class="result-card hidden"
+    >
+
+        <h2>
+            Career Recommendations
+        </h2>
+
+
+        <p class="subtitle">
+            Career roles based on your detected skills
+        </p>
+
+
+        <div id="careerRecommendations">
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         8. LEARNING RECOMMENDATIONS
+    =================================================== -->
+
+    <div
+        id="learningRecommendationResult"
+        class="result-card hidden"
+    >
+
+        <h2>
+            Learning Recommendations
+        </h2>
+
+
+        <p class="subtitle">
+            Personalized learning guidance
+            based on your skill gaps
+        </p>
+
+
+        <div id="learningRecommendations">
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         9. DASHBOARD
+    =================================================== -->
+
+    <div class="card dashboard-card">
+
+        <h1>
+            SkillSync AI Dashboard
+        </h1>
+
+
+        <p class="subtitle">
+            Your placement and career analysis summary
+        </p>
+
+
+
+        <!-- Placement Prediction -->
+
+        <div class="dashboard-section">
+
+            <h2>
+                Placement Prediction
+            </h2>
+
+
+            <p>
+                Prediction
+            </p>
+
+
+            <h3 id="dashboardPrediction">
+                ---
+            </h3>
+
+
+            <p>
+                Placement Readiness
+            </p>
+
+
+            <h1 id="dashboardReadiness">
+                --%
+            </h1>
+
+        </div>
+
+
+
+        <!-- Resume Analysis -->
+
+        <div class="dashboard-section">
+
+            <h2>
+                Resume Analysis
+            </h2>
+
+
+            <p>
+                Skills Detected
+            </p>
+
+
+            <h1 id="dashboardSkillCount">
+                0
+            </h1>
+
+
+            <p>
+                Technical skills detected from your resume
+            </p>
+
+        </div>
+
+
+
+        <!-- Skill Gap -->
+
+        <div class="dashboard-section">
+
+            <h2>
+                Skill Gap
+            </h2>
+
+
+            <p>
+                Skill Match
+            </p>
+
+
+            <h1 id="dashboardSkillMatch">
+                --%
+            </h1>
+
+
+            <p>
+                Match with selected career
+            </p>
+
+
+            <h3>
+                Skills You Need to Learn
+            </h3>
+
+
+            <div id="dashboardMissingSkills">
+
+                <p>
+                    No skill-gap data available yet.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Career Recommendation -->
+
+        <div class="dashboard-section">
+
+            <h2>
+                Career Recommendation
+            </h2>
+
+
+            <p>
+                Recommended Role
+            </p>
+
+
+            <h2 id="dashboardCareer">
+                ---
+            </h2>
+
+        </div>
+
+
+
+        <!-- Learning Recommendations -->
+
+        <div class="dashboard-section">
+
+            <h2>
+                Learning Recommendations
+            </h2>
+
+
+            <div id="dashboardLearning">
+
+                <p>
+                    No learning recommendations available yet.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Refresh Dashboard -->
+
+        <button
+            type="button"
+            id="refreshDashboard"
+        >
+            Refresh Dashboard
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+=================================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
